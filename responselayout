@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html>
+  <head>
+<style>
+@media screen and (max-width: 1500px) {
+#header {
+width: 100%;
+height: 30%;
+  background-color: tan;
+  margin-bottom: 1%;
+}
+#sidebar-left{
+float:left;
+width:20%;
+height:70%;
+background-color: red;
+margin-right: 1%;
+}
+#main{
+float:left;
+width:55%;
+height:70%;
+background-color: blue;
+margin-right: 1%;
+}
+#sidebar-right{
+float:left;
+width:100%;
+height:70%;
+background-color: orange;
+}
+}
+
+@media screen and (max-width: 900px) {
+  #header {
+width: 100%;
+height: 25%;
+  background-color: tan;
+  margin-bottom: 1%;
+}
+#sidebar-left{
+float:;
+width:100%;
+height:25%;
+background-color: red;
+margin-bottom: 1%;
+}
+#main{
+float:left;
+width:49%;
+height:48%;
+background-color: blue;
+margin-right: 1%;
+}
+#sidebar-right{
+float:left;
+width:50%;
+height:48%;
+background-color: orange;
+}
+}
+
+@media screen and (max-width: 250px) {
+  #header {
+width: 100%;
+height: 30%;
+  background-color: tan;
+  margin-bottom: 1%;
+}
+#sidebar-left{
+float:left;
+width:20%;
+height:70%;
+background-color: red;
+margin-right: 1%;
+}
+#main{
+float:left;
+width:55%;
+height:70%;
+background-color: blue;
+margin-right: 1%;
+}
+#sidebar-right{
+float:left;
+width:23%;
+height:70%;
+background-color: orange;
+}
+}
+</style>
+</head>
+<body>
+<div id="header"></div>
+<div id="sidebar-left"></div>
+<div id="main"></div>
+<div id="sidebar-right"></div>
+</body>
+</html>
