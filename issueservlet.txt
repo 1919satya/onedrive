@@ -1,0 +1,10 @@
+PrintWriter out = response.getWriter();
+		String[] id=request.getParameterValues("bookid");
+		HttpSession session=request.getSession(true);
+		LibraryDAO dao=new LibraryDAO();
+		String user=(String)session.getAttribute("user");
+		for (String s : id) {
+			//out.println(s);
+			out.println(dao.issue(Integer.parseInt(s), user));
+		}
+				

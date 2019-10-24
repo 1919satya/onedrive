@@ -1,0 +1,32 @@
+public String issue(int bookId,String username){
+		connection=DaoConnection.getConnection();
+		String cmd="select count(*) cnt from tranbook where bookid=? AND username=?";
+		String result="";
+		try {
+			pst=connection.prepareStatement(cmd);
+			pst.setInt(1, bookId);
+			pst.setString(2, username);
+			ResultSet rs=pst.executeQuery();
+			rs.next();
+			int cnt=rs.getInt("cnt");
+			if(cnt==1) {
+				result="You already taken the book " +bookId + "<br/>";
+			} else {
+				cmd="insert into tranbook(username,BookId) values(?,?)";
+				pst=connection.prepareStatement(cmd);
+				pst.setString(1, username);
+				pst.setInt(2, bookId);
+				pst.executeUpdate();
+				cmd="Update books set TotalBooks=TotalBooks-1 where id=?";
+				pst=connection.prepareStatement(cmd);
+				pst.setInt(1, bookId);
+				pst.executeUpdate();
+				result="Book with Id " +bookId + " Issued Successfully...<br/>";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
